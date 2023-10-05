@@ -21,7 +21,7 @@ class BOJ14501 {
             var day = i + costs[i]
             while (day <= n) {
                 dp[day] = max(dp[day], dp[i] + profits[i])
-                day += costs[i]
+                day++
             }
         }
         return dp.max()
