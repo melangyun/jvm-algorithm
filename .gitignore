@@ -40,3 +40,6 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+## custom
+src/main/kotlin/coding_test/
