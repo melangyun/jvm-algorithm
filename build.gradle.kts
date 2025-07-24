@@ -16,6 +16,7 @@ dependencies {
     testImplementation(kotlin("test"))
 // https://mvnrepository.com/artifact/io.kotest/kotest-runner-junit5-jvm
     testImplementation("io.kotest:kotest-runner-junit5-jvm:5.7.2")
+    testImplementation("org.assertj:assertj-core:3.27.3")
 }
 
 tasks.test {

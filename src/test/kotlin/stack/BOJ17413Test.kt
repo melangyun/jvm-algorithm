@@ -1,5 +1,6 @@
 package stack
 
+import boj.stack.BOJ17413
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test
 

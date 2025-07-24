@@ -1,4 +1,5 @@
-fun main() {
+import leetcode.TwoSum
 
+fun main() {
 }
 
