@@ -1,6 +1,5 @@
-package bfs
+package boj.bfs
 
-import boj.bfs.BOJ14442
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import java.io.*

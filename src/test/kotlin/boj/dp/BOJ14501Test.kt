@@ -1,6 +1,5 @@
-package dp
+package boj.dp
 
-import boj.dp.BOJ14501
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test
 import java.io.BufferedReader

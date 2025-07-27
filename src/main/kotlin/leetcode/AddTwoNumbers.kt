@@ -6,41 +6,23 @@ data class ListNode(var `val`: Int = 0) {
 
 class AddTwoNumbers {
     fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
-        val answer = ListNode()
+        val answer = ListNode(0)
+        var current = answer
 
         var pointer1 = l1
         var pointer2 = l2
-        var answerPointer = answer
-        var nextValue = 0
+        var carry = 0
 
-        while(pointer1 != null || pointer2 != null) {
-            val value1 = pointer1?.`val` ?: 0
-            val value2 = pointer2?.`val` ?: 0
-
-            val sum = value1 + value2 + nextValue
-            val answerValue = sum % 10
-            nextValue = sum / 10
-
-            answerPointer.`val` = answerValue
+        while(pointer1 != null || pointer2 != null || carry > 0) {
+            val sum = (pointer1?.`val` ?: 0) + (pointer2?.`val` ?: 0) + carry
+            carry = sum / 10
+            current.next = ListNode(sum %10)
+            current = current.next!!
 
             pointer1 = pointer1?.next
             pointer2 = pointer2?.next
-
-            if (pointer1 != null || pointer2 != null || nextValue > 0) {
-                answerPointer.next = ListNode()
-                answerPointer = answerPointer.next!!
-            }
         }
 
-        return answer
+        return answer.next
     }
 }
-/**
- * Example:
- * var li = ListNode(5)
- * var v = li.`val`
- * Definition for singly-linked list.
- * class ListNode(var `val`: Int) {
- *     var next: ListNode? = null
- * }
- */

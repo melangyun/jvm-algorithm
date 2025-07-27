@@ -57,7 +57,9 @@ class AddTwoNumbersTest {
                 next = ListNode(9).apply {
                     next = ListNode(9).apply {
                         next = ListNode(9).apply {
-                            next = ListNode(9)
+                            next = ListNode(9).apply {
+                                next = ListNode(9)
+                            }
                         }
                     }
                 }
@@ -72,13 +74,16 @@ class AddTwoNumbersTest {
             }
         }
 
-        val result:ListNode? = ListNode(8).apply {
+        // [8,9,9,9,0,0,0,1]
+        val result: ListNode? = ListNode(8).apply {
             next = ListNode(9).apply {
                 next = ListNode(9).apply {
-                    next = ListNode(0).apply {
+                    next = ListNode(9).apply {
                         next = ListNode(0).apply {
                             next = ListNode(0).apply {
-                                next = ListNode(1)
+                                next = ListNode(0).apply {
+                                    next = ListNode(1)
+                                }
                             }
                         }
                     }

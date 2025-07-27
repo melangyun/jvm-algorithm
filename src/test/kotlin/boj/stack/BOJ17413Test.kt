@@ -1,4 +1,4 @@
-package stack
+package boj.stack
 
 import boj.stack.BOJ17413
 import io.kotest.matchers.shouldBe
