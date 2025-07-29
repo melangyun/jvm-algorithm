@@ -32,6 +32,34 @@ class PalindromeLinkedListTest{
         val nonPalindromeHead = ListNode(1)
 
         val palindromeLinkedList = PalindromeLinkedList()
+        assertTrue(palindromeLinkedList.isPalindrome(nonPalindromeHead))
+    }
+
+    @Test
+    fun testIsPalindrome4(){
+        val nonPalindromeHead = ListNode(1).apply {
+            next = ListNode(0).apply {
+                next = ListNode(1)
+            }
+        }
+
+        val palindromeLinkedList = PalindromeLinkedList()
+        assertTrue(palindromeLinkedList.isPalindrome(nonPalindromeHead))
+    }
+
+    @Test
+    fun testIsPalindrome5(){
+        val nonPalindromeHead = ListNode(1).apply {
+            next = ListNode(3).apply {
+                next = ListNode(4).apply {
+                    next = ListNode(4).apply {
+                        next = ListNode(1)
+                    }
+                }
+            }
+        }
+
+        val palindromeLinkedList = PalindromeLinkedList()
         assertFalse(palindromeLinkedList.isPalindrome(nonPalindromeHead))
     }
 }

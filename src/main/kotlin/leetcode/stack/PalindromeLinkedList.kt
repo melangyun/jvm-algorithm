@@ -1,23 +1,26 @@
 package leetcode.stack
 
-import java.util.*
-
 class ListNode(var `val`: Int) {
     var next: ListNode? = null
 }
 
 class PalindromeLinkedList {
     fun isPalindrome(head: ListNode?): Boolean {
-        val stack = Stack<Int>()
+        if (head?.next == null) return true
+
+        val deque = ArrayDeque<Int>()
         var pointer = head
         while (pointer?.`val` != null) {
-            if (stack.isEmpty() || pointer.`val` != stack.peek()) {
-                stack.push(pointer.`val`)
-            } else {
-                stack.pop()
-            }
+            deque.add(pointer.`val`)
             pointer = pointer.next
         }
-        return stack.isEmpty()
+
+        while (deque.size > 1){
+            if(deque.removeFirst() != deque.removeLast()){
+                return false
+            }
+        }
+
+        return true
     }
 }
